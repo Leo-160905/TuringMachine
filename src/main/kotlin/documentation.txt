@@ -1,0 +1,51 @@
+  amov x: Moves to index x
+  rmov x: Moves by x
+
+length x: Sets length of the tape of the machine
+  init x: writes a binary number on tape
+
+   set x: writes number on tape (x can be 1 or 0)
+    if x: if current number is x (x can be 1 or 0)
+  ifst x: if state of machine is equal to x
+   ifi x: if index of tape is equal to x
+  ifnn  : if the current index is not null
+
+  stat x: Sets a state for machine
+
+  jmpi x: Jumps to line x in the programm but don't count empty line breaks they get removed
+  rjmp x: Jumps by x in programm
+
+   end  : ends programm is needed to run
+
+   every command needs to be splittet by ";"
+
+
+
+length 10;
+set 1;
+rmov 1;
+ifi 10;
+jmpi 7;
+jmpi 2;
+end
+
+init 10010;
+rmov 1;
+ifi >10;
+rjmp 2;
+rjmp -3;
+end
+
+
+rmov 1;
+ifi 100;
+rjmp 2;
+rjmp -3;
+end
+
+
+length 10;
+init 1000;
+rmov 1;
+ifnn;
+rjmp -2
